@@ -1,0 +1,207 @@
+整体的处理流程
+
+1. 先获得含有RBD和antibody的复合物的pdb文件 origin.pdb
+2. 删除复合物里的其他小分子，如果有多个antibody,分成多个文件，一个文件里只留下一个RBD和一个antibody
+3. 使用命令 gmx editconf -f origin.pdb  -o renum.pdb -resnr 1 对删减过的文件进行重新排序，然后用vmd打开，确保能完成看到RBD和antibody
+4. 使用文件 fixMissingAtom.py 对复合物缺失的原子和残基进行修补
+5. 使用文件 script.sh 开始进行分子动力学模拟 /home/wurp/workspace/antibody/BioUtil-master/gmx/script.sh
+6. 做index, gmx make_ndx -f md_0.gro -o index.ndx 将复合物的 receptor 和 ligand 的坐标分出来
+7. 计算 MMPBSA
+
+cd /home/wurp/workspace/antibody/variant/Omicron/Beta-55
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 188 -li 189 630 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 188 -li 189 630 -fm normal -rm hyhoh -t 1000 10000 200
+
+
+
+cd /home/wurp/workspace/antibody/variant/Omicron/EY6A
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 428 615 -li 1 427 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 428 615 -li 1 427 -fm normal -rm hyhoh -t 1000 10000 200
+
+
+cd  /home/wurp/workspace/antibody/variant/Beta/beta-22
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 198 -li 199 640 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 198 -li 199 640 -fm normal -rm hyhoh -t 1000 10000 200
+
+cd  /home/wurp/workspace/antibody/variant/Beta/beta-27
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 194 -li 195 622 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 194 -li 195 622 -fm normal -rm hyhoh -t 1000 10000 200
+
+
+cd  /home/wurp/workspace/antibody/variant/Gamma/COVOX-222
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 193 -li 194 623 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 193 -li 194 623 -fm normal -rm hyhoh -t 1000 10000 200
+
+
+cd  /home/wurp/workspace/antibody/variant/Alpha/COVOX-40
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 194 -li 195 413 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 194 -li 195 413 -fm normal -rm hyhoh -t 1000 10000 200
+
+cd  /home/wurp/workspace/antibody/variant/Alpha/COVOX-269
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 435 630 -li 1 434 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 435 630 -li 1 434 -fm normal -rm hyhoh -t 1000 10000 200
+
+cd  /home/wurp/workspace/antibody/variant/Beta/S3H3
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 433 504 -li 1 432 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 433 504 -li 1 432 -fm normal -rm hyhoh -t 1000 10000 200
+
+
+cd  /home/wurp/workspace/antibody/variant/Delta/COVOX-253
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 197 -li 198 635 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 197 -li 198 635 -fm normal -rm hyhoh -t 1000 10000 200
+
+cd  /home/wurp/workspace/antibody/NTD/7LY3
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm hyhoh -t 1000 10000 200
+
+cd  /home/wurp/workspace/antibody/NTD/7M8J
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 224 -li 225 453 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 224 -li 225 453 -fm normal -rm hyhoh -t 1000 10000 200
+
+cd  /home/wurp/workspace/antibody/NTD/7L2C
+mkdir -p 1-10-200
+cd 1-10-200
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 286 -li 287 720 -fm normal -rm normal -t 1000 10000 200
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 286 -li 287 720 -fm normal -rm hyhoh -t 1000 10000 200
+
+
+#----------------------------------------------5-10ns, 20ps间隔---------------------------------------------------------------------------------
+cd /home/wurp/workspace/antibody/variant/Omicron/Beta-55
+mkdir -p 5-10-20
+cd 5-10-20
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 188 -li 189 630 -fm normal -rm normal -t 5000 10000 20
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 188 -li 189 630 -fm normal -rm hyhoh -t 5000 10000 20
+
+
+cd  /home/wurp/workspace/antibody/variant/Gamma/COVOX-222
+mkdir -p 5-10-20
+cd 5-10-20
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 193 -li 194 623 -fm normal -rm normal -t 5000 10000 20
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 193 -li 194 623 -fm normal -rm hyhoh -t 5000 10000 20
+
+
+cd  /home/wurp/workspace/antibody/NTD/7LY3
+mkdir -p 5-10-20
+cd 5-10-20
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm normal -t 5000 10000 20
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm hyhoh -t 5000 10000 20
+
+cd  /home/wurp/workspace/antibody/NTD/7M8J
+mkdir -p 5-10-20
+cd 5-10-20
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 224 -li 225 453 -fm normal -rm normal -t 5000 10000 20
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 224 -li 225 453 -fm normal -rm hyhoh -t 5000 10000 20
+
+cd  /home/wurp/workspace/antibody/NTD/7L2C
+mkdir -p 5-10-20
+cd 5-10-20
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 286 -li 287 720 -fm normal -rm normal -t 5000 10000 20
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 286 -li 287 720 -fm normal -rm hyhoh -t 5000 10000 20
+
+#----------------------------------------------1-5ns, 20ps间隔---------------------------------------------------------------------------------
+cd  /home/wurp/workspace/antibody/NTD/7LY3
+mkdir -p 1-5-20
+cd 1-5-20
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm normal -t 1000 5000 20
+mkdir -p hoh 
+cd hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../../md_0.tpr -xtc ../../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm hyhoh -t 1000 5000 20
+
+
+
+
+
+
+8. 导出MMPBSA的结果
+没算水的：
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Beta/beta-27/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Omicron/Beta-55/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Omicron/EY6A/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Gamma/COVOX-222/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Alpha/COVOX-40/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Alpha/COVOX-269/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Beta/S3H3/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Delta/COVOX-253/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7LY3/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7M8J/1-10-200/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7L2C/1-10-200/normal
+#----------------------------------------------5-10ns, 20ps间隔---------------------------------------------------------------------------------
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7LY3/5-10-20/normal
+
+
+算了水的：
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Beta/beta-22/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Omicron/Beta-55/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Omicron/EY6A/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Beta/beta-27/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Gamma/COVOX-222/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Alpha/COVOX-40/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Alpha/COVOX-269/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Beta/S3H3/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/variant/Delta/COVOX-253/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7LY3/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7M8J/1-10-200/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7L2C/1-10-200/hoh
+
+
+
+
+9.画水的贡献图
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_with_hoh_.py /home/wurp/workspace/antibody/variant/Beta/beta-22/1-10-200/hoh
+

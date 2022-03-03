@@ -1,0 +1,7 @@
+/home/wurp/workspace/antibody/BioUtil-master/gmx/gmx_mmpbsa_normal.sh -dir normal -s ../../md_0.tpr -f ../final.xtc -n ../index.ndx -com Protein -pro receptor -lig ligand -b 0 -e 10000 -i 1 -cou dh -ts ie
+
+
+
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/main.py -tpr ../md_0.tpr -xtc ../md_0.xtc -ri 1 284 -li 285 716 -fm normal -rm normal -t 7880 10000 20
+
+id~7.88ns aw
