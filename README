@@ -183,6 +183,16 @@ python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/w
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7L2C/1-10-200/normal
 #----------------------------------------------5-10ns, 20ps间隔---------------------------------------------------------------------------------
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7LY3/5-10-20/normal
+#----------------------------------------------1-5ns, 20ps间隔---------------------------------------------------------------------------------
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7LY3/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7M8J/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7L2C/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Omicron/Beta-55/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Gamma/COVOX-222/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Alpha/COVOX-269/1-5-20/normal
+
+
+
 
 
 算了水的：
