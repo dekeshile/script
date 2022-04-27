@@ -182,7 +182,15 @@ python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/w
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7M8J/1-10-200/normal
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7L2C/1-10-200/normal
 #----------------------------------------------5-10ns, 20ps间隔---------------------------------------------------------------------------------
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Alpha/COVOX-269/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Gamma/COVOX-222/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Omicron/Beta-55/5-10-20/normal
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7LY3/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7M8J/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7L2C/5-10-20/normal
+
+
+
 #----------------------------------------------1-5ns, 20ps间隔---------------------------------------------------------------------------------
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7LY3/1-5-20/normal
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7M8J/1-5-20/normal
@@ -191,7 +199,29 @@ python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /ho
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Gamma/COVOX-222/1-5-20/normal
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Alpha/COVOX-269/1-5-20/normal
 
+#---------------------------SARS-COV-2-----------------------------------------
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7JVA/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFV/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFW/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFX/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFY/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/SARS-COV-2/6YZ5/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/SARS-COV-2/7C8D/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/SARS-COV-2/7KGK/1-5-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/SARS-COV-2/7L5B/1-5-20/normal
 
+#  7JVA  7KFV  7KFW   7KFX 7KFY  6YZ5 6ZBP 7B27 7BWJ 7C8D 7KGK
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7JVA/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFV/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFW/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFX/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFY/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/6YZ5/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/6ZBP/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7B27/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7BWJ/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7C8D/5-10-20/normal
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KGK/5-10-20/normal
 
 
 
@@ -209,9 +239,37 @@ python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/w
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7M8J/1-10-200/hoh
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py ~/workspace/antibody/NTD/7L2C/1-10-200/hoh
 
+#----------------------------------hoh----1-5ns, 20ps间隔-----
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py  /home/wurp/workspace/antibody/variant/Alpha/COVOX-269/1-5-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Gamma/COVOX-222/1-5-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Omicron/Beta-55/1-5-20/hoh
+
+#----------------------------------hoh----5-10ns, 20ps间隔-----
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7LY3/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7M8J/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/NTD/7L2C/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py  /home/wurp/workspace/antibody/variant/Alpha/COVOX-269/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Gamma/COVOX-222/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/wurp/workspace/antibody/variant/Omicron/Beta-55/5-10-20/hoh
+
+#  7JVA  7KFV  7KFW   7KFX 7KFY  6YZ5 6ZBP 7B27 7BWJ 7C8D 7KGK hoh----5-10ns, 20ps间隔-----
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7JVA/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFV/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFW/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFX/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KFY/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/6YZ5/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/6ZBP/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7B27/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7BWJ/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7C8D/5-10-20/hoh
+python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_normal.py /home/zhangxin/antibodies/7KGK/5-10-20/hoh
+
 
 
 
 9.画水的贡献图
 python /home/wurp/workspace/antibody/BioUtil-master/gmx/pygmx/plot_with_hoh_.py /home/wurp/workspace/antibody/variant/Beta/beta-22/1-10-200/hoh
 
+
+sftp://172.16.11.133/media/xin/Raid0/ACS/gmx/interaction

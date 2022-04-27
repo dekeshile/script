@@ -1,0 +1,538 @@
+nohup: 忽略输入
+                      :-) GROMACS - gmx pdb2gmx, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx pdb2gmx -f /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/renum.pdb -o processed.gro -water tip3p
+
+Terminated
+                      :-) GROMACS - gmx editconf, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx editconf -f processed.gro -o newbox.gro -c -d 1.5 -bt cubic
+
+
+-------------------------------------------------------
+Program:     gmx editconf, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -f
+    File 'processed.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/em_0.mdp -c newbox.gro -p topol.top -o em_0.tpr -maxwarn 2
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'newbox.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -v -deffnm em_0
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                      :-) GROMACS - gmx solvate, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx solvate -cp em_0.gro -cs spc216.gro -o solv.gro -p topol.top
+
+
+-------------------------------------------------------
+Program:     gmx solvate, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -cp
+    File 'em_0.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/ions.mdp -c solv.gro -p topol.top -o ions.tpr -maxwarn 1
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'solv.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx genion, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral -conc 0.15
+
+
+-------------------------------------------------------
+Program:     gmx genion, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -s
+    File 'ions.tpr' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/em_1.mdp -c solv_ions.gro -p topol.top -o em_1.tpr -r solv_ions.gro
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'solv_ions.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -r
+    File 'solv_ions.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -v -deffnm em_1
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/em_2.mdp -c em_1.gro -p topol.top -o em_2.tpr
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'em_1.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -v -deffnm em_2
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/em_3.mdp -c em_2.gro -p topol.top -o em_3.tpr
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'em_2.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -v -deffnm em_3
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/nvt.mdp -c em_3.gro -r em_3.gro -p topol.top -o nvt.tpr -maxwarn 1
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'em_3.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -r
+    File 'em_3.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -deffnm nvt -pin on -ntmpi 1 -ntomp 6 -gpu_id 1 -pme gpu -update gpu -bonded gpu
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/npt.mdp -c nvt.gro -r nvt.gro -p topol.top -o npt.tpr -maxwarn 1
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'nvt.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -r
+    File 'nvt.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -deffnm npt -pin on -ntmpi 1 -ntomp 6 -gpu_id 1 -pme gpu -update gpu -bonded gpu
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx grompp, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx grompp -f /home/wurp/workspace/antibody/BioUtil413/gmx/mdp/prod.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0.tpr -maxwarn 1
+
+
+-------------------------------------------------------
+Program:     gmx grompp, version 2022
+Source file: src/gromacs/commandline/cmdlineparser.cpp (line 271)
+Function:    void gmx::CommandLineParser::parse(int*, char**)
+
+Error in user input:
+Invalid command-line options
+  In command-line option -c
+    File 'npt.gro' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -t
+    File 'npt.cpt' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+  In command-line option -p
+    File 'topol.top' does not exist or is not accessible.
+    The file could not be opened.
+      Reason: No such file or directory
+      (call to fopen() returned error code 2)
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                       :-) GROMACS - gmx mdrun, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/1
+Command line:
+  gmx mdrun -deffnm md_0 -pin on -ntmpi 1 -ntomp 6 -gpu_id 1 -pme gpu -update gpu -bonded gpu
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2022
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+                      :-) GROMACS - gmx pdb2gmx, 2022 (-:
+
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/MD/2
+Command line:
+  gmx pdb2gmx -f /home/wurp/workspace/antibody/SARS-COV-2/1_7KFY/renum.pdb -o processed.gro -water tip3p
+
