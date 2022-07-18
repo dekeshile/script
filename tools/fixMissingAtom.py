@@ -2,8 +2,8 @@ from biobb_model.model.fix_side_chain import FixSideChain
 #from biobb_structure_checking import structure_checking
 #from biobb_model.model.fix_backbone import FixBackbone
 
-atom_dir = '/home/wurp/workspace/antibody/NTD/7L2C/'
-outputs_dir = '/home/wurp/workspace/antibody/NTD/7L2C/'
+atom_dir = '/home/wurp/workspace/antibody/variant/Omicron/7QNW-EY6A/'
+outputs_dir = '/home/wurp/workspace/antibody/variant/Omicron/7QNW-EY6A/'
 
 pdbCode = 'renum'
 origin_pdb = pdbCode + '.pdb'
@@ -22,6 +22,7 @@ print('fixing side chain -----------------')
 FixSideChain(input_pdb_path=atom_dir + origin_pdb,output_pdb_path=outputs_dir + pdbCode + '_side_fixed.pdb',properties=prop).launch()
 
 
-# python3 /home/wurp/workspace/antibody/script/fixMissingAtom.py
+# python3 /home/wurp/workspace/antibody/script/tools/fixMissingAtom.py
+
 
 

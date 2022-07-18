@@ -3,28 +3,25 @@
 # >chmod a+x script.sh
 # >./script.sh path gpu_id 
 # for example:
-# ./script_smallRun.sh  /home/wurp/workspace/antibody/variant/Omicron/Beta-55   1
+# /home/wurp/workspace/antibody/script/MD/script_10ns.sh  /home/wurp/workspace/antibody/variant/Omicron/7QNW-EY6A
 
 
 #环境参数配置
-mdp_dir="/home/wurp/workspace/antibody/BioUtil413/gmx/mdp"
-gpu_id=$2  #从输入的第二个参数获取需要运行的 gpu_id
+mdp_dir="/home/wurp/PycharmProjects/BioUtil/gmx/mdp"
 
+#从第一个参数获取抗体所在目录，判断目录是否存在
+if [ ! -d $1 ]; then
+    mkdir $1    
+fi
 
-#从第一个参数获取抗体所在目录
-thispath=$1
-cd $thispath
-mkdir -p MD_10ns
-cd MD_10ns
+cd $1
 
-
-
-echo -e 2 \n | gmx pdb2gmx -f $thispath/renum.pdb -o processed.gro -water tip3p -ignh
+echo -e 2 \n | gmx pdb2gmx -f ../renum.pdb -o processed.gro -water tip3p -ignh
 
 gmx editconf -f processed.gro -o newbox.gro -c -d 1.5 -bt cubic
 
 
-#################### EM 0 ######################
+# #################### EM 0 ######################
 gmx grompp -f $mdp_dir/em_0.mdp -c newbox.gro -p topol.top -o em_0.tpr -maxwarn 2
 
 gmx mdrun -v -deffnm em_0 
@@ -55,15 +52,15 @@ gmx mdrun -v -deffnm em_3
 ################# Balance ####################
 gmx grompp -f $mdp_dir/nvt.mdp -c em_3.gro -r em_3.gro -p topol.top -o nvt.tpr   -maxwarn 1
 
-gmx mdrun -deffnm nvt -pin on -ntmpi 1 -ntomp 6 -gpu_id $gpu_id -pme gpu -update gpu -bonded gpu
+gmx mdrun -deffnm nvt -gpu_id 1 -pme gpu -update gpu -bonded gpu
 
 gmx grompp -f $mdp_dir/npt.mdp -c nvt.gro -r nvt.gro -p topol.top -o npt.tpr  -maxwarn 1
 
-gmx mdrun -deffnm npt  -pin on -ntmpi 1 -ntomp 6 -gpu_id $gpu_id -pme gpu -update gpu -bonded gpu
+gmx mdrun -deffnm npt -gpu_id 1  -pme gpu -update gpu -bonded gpu
 
 
 ################## MD 不带位置限制 ########################
 gmx grompp -f $mdp_dir/prod.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0.tpr  -maxwarn 1
 
-gmx mdrun -deffnm md_0 -pin on -ntmpi 1 -ntomp 6 -gpu_id $gpu_id -pme gpu -update gpu -bonded gpu
+gmx mdrun -deffnm md_0 -ntmpi 1 -ntomp 6 -gpu_id 1 -pme gpu -update gpu -bonded gpu
 
